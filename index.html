@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Clock</title>
+    <title>Real-Time Clock with Date</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 20%;
+            transition: background-color 0.5s, color 0.5s;
         }
         #clock {
             font-size: 2em;
             font-weight: bold;
         }
+        #date {
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
+    <div id="date"></div>
     <div id="clock"></div>
 
     <script>
@@ -27,7 +32,27 @@
             const seconds = now.getSeconds().toString().padStart(2, '0');
             const timeString = `${hours}:${minutes}:${seconds}`;
 
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const day = daysOfWeek[now.getDay()];
+            const date = now.getDate().toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed
+            const year = now.getFullYear();
+            const dateString = `${day}, ${date}/${month}/${year}`;
+
             document.getElementById('clock').textContent = timeString;
+            document.getElementById('date').textContent = dateString;
+
+            // Change background color based on the time
+            if (hours >= 8 && hours < 16) {
+                document.body.style.backgroundColor = 'yellow';
+                document.body.style.color = 'black';
+            } else if (hours >= 16 && hours < 24) {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+            } else {
+                document.body.style.backgroundColor = 'blue';
+                document.body.style.color = 'white';
+            }
         }
 
         setInterval(updateTime, 1000);
