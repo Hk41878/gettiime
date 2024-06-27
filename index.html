@@ -20,7 +20,16 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .div1, .div2 {
+        .div1{
+            display:none;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .div2{
+            display:block;
             padding: 20px;
             margin: 10px 0;
             background-color: #fff;
@@ -28,10 +37,22 @@
             border-radius: 5px;
         }
         @media (max-width: 600px) {
-            .div1, .div2 {
-                padding: 15px;
-                margin: 5px 0;
-            }
+            .div1{
+            display:block;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .div2{
+            display:none;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
             .container {
                 padding: 10px;
             }
