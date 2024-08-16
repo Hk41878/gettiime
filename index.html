@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Buttons</title>
+    <title>Social Media Buttons with Background Change</title>
     <style>
         body, html {
             margin: 0;
@@ -14,6 +14,7 @@
             align-items: center;
             background: #f0f0f0;
             font-family: Arial, sans-serif;
+            transition: background 0.5s ease;
         }
 
         .buttons {
@@ -59,9 +60,23 @@
 </head>
 <body>
     <div class="buttons">
-        <button class="button instagram">Instagram</button>
-        <button class="button facebook">Facebook</button>
-        <button class="button whatsapp">WhatsApp</button>
+        <button class="button instagram" onclick="changeBackground('instagram')">Instagram</button>
+        <button class="button facebook" onclick="changeBackground('facebook')">Facebook</button>
+        <button class="button whatsapp" onclick="changeBackground('whatsapp')">WhatsApp</button>
     </div>
+
+    <script>
+        function changeBackground(platform) {
+            let body = document.body;
+            
+            if (platform === 'instagram') {
+                body.style.background = 'linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)';
+            } else if (platform === 'facebook') {
+                body.style.background = 'linear-gradient(135deg, #4c669f, #3b5998, #192f6a)';
+            } else if (platform === 'whatsapp') {
+                body.style.background = 'linear-gradient(135deg, #25D366, #128C7E, #075E54)';
+            }
+        }
+    </script>
 </body>
 </html>
