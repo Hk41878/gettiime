@@ -19,7 +19,9 @@
 
         .buttons {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
         .button {
@@ -31,31 +33,41 @@
             cursor: pointer;
             transition: background 0.3s ease;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        .button.instagram {
-            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        .button.instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .button.facebook { background: linear-gradient(135deg, #4c669f, #3b5998, #192f6a); }
+        .button.whatsapp { background: linear-gradient(135deg, #25D366, #128C7E, #075E54); }
+        .button.linkedin { background: linear-gradient(135deg, #0077B5, #005B85); }
+        .button.twitter { background: linear-gradient(135deg, #1DA1F2, #0D8BD7); }
+        .button.tiktok { background: linear-gradient(135deg, #FE2C55, #25F4EE); }
+        .button.youtube { background: linear-gradient(135deg, #FF0000, #CC0000); }
+        .button.pinterest { background: linear-gradient(135deg, #E60023, #C8232C); }
+        .button.snapchat { background: linear-gradient(135deg, #FFFC00, #FFD300); color: #000; }
+        .button.call { background: linear-gradient(135deg, #00C853, #00E676); }
+        .button.email { background: linear-gradient(135deg, #D93025, #EA4335); }
+        .button.message { background: linear-gradient(135deg, #34B7F1, #0084FF); }
+        .button.telegram { background: linear-gradient(135deg, #0088CC, #00BFFF); }
+
+        .button:hover {
+            background-size: 200%;
         }
 
-        .button.instagram:hover {
-            background: linear-gradient(135deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
-        }
+        .button.instagram:hover { background: linear-gradient(135deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%); }
+        .button.facebook:hover { background: linear-gradient(135deg, #192f6a, #3b5998, #4c669f); }
+        .button.whatsapp:hover { background: linear-gradient(135deg, #075E54, #128C7E, #25D366); }
+        .button.linkedin:hover { background: linear-gradient(135deg, #005B85, #0077B5); }
+        .button.twitter:hover { background: linear-gradient(135deg, #0D8BD7, #1DA1F2); }
+        .button.tiktok:hover { background: linear-gradient(135deg, #25F4EE, #FE2C55); }
+        .button.youtube:hover { background: linear-gradient(135deg, #CC0000, #FF0000); }
+        .button.pinterest:hover { background: linear-gradient(135deg, #C8232C, #E60023); }
+        .button.snapchat:hover { background: linear-gradient(135deg, #FFD300, #FFFC00); }
+        .button.call:hover { background: linear-gradient(135deg, #00E676, #00C853); }
+        .button.email:hover { background: linear-gradient(135deg, #EA4335, #D93025); }
+        .button.message:hover { background: linear-gradient(135deg, #0084FF, #34B7F1); }
+        .button.telegram:hover { background: linear-gradient(135deg, #00BFFF, #0088CC); }
 
-        .button.facebook {
-            background: linear-gradient(135deg, #4c669f, #3b5998, #192f6a);
-        }
-
-        .button.facebook:hover {
-            background: linear-gradient(135deg, #192f6a, #3b5998, #4c669f);
-        }
-
-        .button.whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E, #075E54);
-        }
-
-        .button.whatsapp:hover {
-            background: linear-gradient(135deg, #075E54, #128C7E, #25D366);
-        }
     </style>
 </head>
 <body>
@@ -63,6 +75,16 @@
         <button class="button instagram" onclick="changeBackground('instagram')">Instagram</button>
         <button class="button facebook" onclick="changeBackground('facebook')">Facebook</button>
         <button class="button whatsapp" onclick="changeBackground('whatsapp')">WhatsApp</button>
+        <button class="button linkedin" onclick="changeBackground('linkedin')">LinkedIn</button>
+        <button class="button twitter" onclick="changeBackground('twitter')">Twitter</button>
+        <button class="button tiktok" onclick="changeBackground('tiktok')">TikTok</button>
+        <button class="button youtube" onclick="changeBackground('youtube')">YouTube</button>
+        <button class="button pinterest" onclick="changeBackground('pinterest')">Pinterest</button>
+        <button class="button snapchat" onclick="changeBackground('snapchat')">Snapchat</button>
+        <button class="button call" onclick="changeBackground('call')">Call</button>
+        <button class="button email" onclick="changeBackground('email')">Email</button>
+        <button class="button message" onclick="changeBackground('message')">Message</button>
+        <button class="button telegram" onclick="changeBackground('telegram')">Telegram</button>
     </div>
 
     <script>
@@ -75,6 +97,26 @@
                 body.style.background = 'linear-gradient(135deg, #4c669f, #3b5998, #192f6a)';
             } else if (platform === 'whatsapp') {
                 body.style.background = 'linear-gradient(135deg, #25D366, #128C7E, #075E54)';
+            } else if (platform === 'linkedin') {
+                body.style.background = 'linear-gradient(135deg, #0077B5, #005B85)';
+            } else if (platform === 'twitter') {
+                body.style.background = 'linear-gradient(135deg, #1DA1F2, #0D8BD7)';
+            } else if (platform === 'tiktok') {
+                body.style.background = 'linear-gradient(135deg, #FE2C55, #25F4EE)';
+            } else if (platform === 'youtube') {
+                body.style.background = 'linear-gradient(135deg, #FF0000, #CC0000)';
+            } else if (platform === 'pinterest') {
+                body.style.background = 'linear-gradient(135deg, #E60023, #C8232C)';
+            } else if (platform === 'snapchat') {
+                body.style.background = 'linear-gradient(135deg, #FFFC00, #FFD300)';
+            } else if (platform === 'call') {
+                body.style.background = 'linear-gradient(135deg, #00C853, #00E676)';
+            } else if (platform === 'email') {
+                body.style.background = 'linear-gradient(135deg, #D93025, #EA4335)';
+            } else if (platform === 'message') {
+                body.style.background = 'linear-gradient(135deg, #34B7F1, #0084FF)';
+            } else if (platform === 'telegram') {
+                body.style.background = 'linear-gradient(135deg, #0088CC, #00BFFF)';
             }
         }
     </script>
