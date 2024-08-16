@@ -3,72 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Web Page</title>
+    <title>Instagram-like Background</title>
     <style>
-        body {
-            background-color: #99dd99; /* Skin color background */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
+        }
+
+        .background {
+            height: 100%;
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            position: relative;
+            overflow: hidden;
         }
-        .container {
+
+        .background::before {
+            content: "";
+            position: absolute;
             width: 100%;
-            max-width: 500px;
-            padding: 20px;
-            box-sizing: border-box;
+            height: 100%;
+            background: linear-gradient(to right, #4c669f, #3b5998, #192f6a);
+            opacity: 0.4;
+            z-index: -1;
         }
-        .div1{
-            display:none;
-            padding: 20px;
-            margin: 10px 0;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+
+        .content {
+            text-align: center;
+            color: white;
+            z-index: 1;
         }
-        .div2{
-            display:block;
-            padding: 20px;
-            margin: 10px 0;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        @media (max-width: 600px) {
-            .div1{
-            display:block;
-            padding: 20px;
-            margin: 10px 0;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .div2{
-            display:none;
-            padding: 20px;
-            margin: 10px 0;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-            .container {
-                padding: 10px;
-            }
+
+        .content img {
+            width: 300px;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="div1">
-            
-            <p>Rotate Your Phone. </p>
-        </div>
-        <div class="div2">
-            
-            
-            <p>🖕Fuck You ashole🖕</p>
+    <div class="background">
+        <div class="content">
+            <!-- Your content goes here -->
+            <h1>Welcome to My Website</h1>
+            <p>This is an Instagram-like background.</p>
         </div>
     </div>
 </body>
