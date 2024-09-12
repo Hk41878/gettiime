@@ -87,6 +87,8 @@
         <button class="button telegram" onclick="changeBackground('telegram')">Telegram</button>
     </div>
 
+    <button onclick="sharePage()">Share This Page</button>
+
     <script>
         function changeBackground(platform) {
             let body = document.body;
@@ -119,6 +121,23 @@
                 body.style.background = 'linear-gradient(135deg, #0088CC, #00BFFF)';
             }
         }
+
+        
+function sharePage() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            text: 'Check out this site!',
+            url: window.location.href
+        }).then(() => {
+            console.log('Thanks for sharing!');
+        }).catch((error) => {
+            console.error('Error sharing', error);
+        });
+    } else {
+        alert('Web Share API is not supported in your browser.');
+    }
+}
     </script>
 </body>
 </html>
